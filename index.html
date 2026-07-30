@@ -1,0 +1,489 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FOMIDES - Impulsando el Desarrollo Integral en Colombia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Libre+Franklin:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#1c1c1a",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#e5e2de",
+                      "border-gray": "#DCDCDC",
+                      "outline-variant": "#d5c4ae",
+                      "surface-variant": "#ede0d3",
+                      "surface-dim": "#e5d8ca",
+                      "tertiary-container": "#81d27c",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#002204",
+                      "inverse-on-surface": "#fcefe1",
+                      "on-tertiary-fixed-variant": "#005312",
+                      "secondary-fixed": "#e5e2de",
+                      "on-primary-fixed-variant": "#614000",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#ffddaf",
+                      "secondary": "#5f5e5c",
+                      "surface-tint": "#805600",
+                      "on-secondary-container": "#656461",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fff8f3",
+                      "inverse-primary": "#ffba43",
+                      "tertiary": "#1b6d24",
+                      "community-purple": "#7B1FA2",
+                      "surface-container-high": "#f3e6d8",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#f9b233",
+                      "surface-bright": "#fff8f3",
+                      "primary-fixed-dim": "#ffba43",
+                      "background": "#fff8f3",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474744",
+                      "action-blue": "#3B82F6",
+                      "on-primary-fixed": "#281800",
+                      "inverse-surface": "#362f26",
+                      "primary": "#805600",
+                      "tertiary-fixed-dim": "#88d982",
+                      "surface-container-low": "#fff2e3",
+                      "surface-gray": "#F4F4F5",
+                      "on-primary-container": "#6a4700",
+                      "on-surface-variant": "#514534",
+                      "surface-container-highest": "#ede0d3",
+                      "surface-container": "#f9ecde",
+                      "on-tertiary-container": "#005b14",
+                      "secondary-fixed-dim": "#c8c6c3",
+                      "tertiary-fixed": "#a3f69c",
+                      "outline": "#837562",
+                      "on-primary": "#ffffff",
+                      "on-background": "#211b12",
+                      "on-surface": "#211b12",
+                      "energy-pink": "#D81B60"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "label-lg": ["Montserrat"],
+                      "display-lg-mobile": ["Montserrat"],
+                      "display-lg": ["Montserrat"],
+                      "body-md": ["Libre Franklin"],
+                      "body-lg": ["Libre Franklin"],
+                      "headline-lg": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "label-sm": ["Montserrat"]
+              },
+              "fontSize": {
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .soft-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #805600, #D81B60, #7B1FA2, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed" data-mode="connect">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky bg-surface z-50 shadow-sm border-b border-border-gray">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-headline-md font-bold text-primary">FOMIDES</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-label-lg text-label-lg">
+<a class="text-primary border-b-2 border-primary pb-1" href="#">Inicio</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#sectors">El Fondo</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#sectors">Proyectos</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#impact">Convocatorias</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#contact"><br></a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity">search</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-lg hover:opacity-90 transition-all">Contacto</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional aerial view of a large-scale modern infrastructure project in Colombia with mountains in the background during golden hour. Construction crews in high-visibility vests are working alongside heavy machinery. The atmosphere is optimistic and industrious, with soft warm lighting highlighting the progress and architectural precision of the bridge and roadway development." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkRBF1F8Ga978iluPrj3flVo5YHkJS4jzwYjbPZaWIEJapOq-kOgECRpbYVbwqDkY1_T2KH5AtV_74MSqQfAXmQCCytWGSjBb_iQbW2Ce_CMuDWSsxKptvMaCWlxqHf2ZmTLNtVYg6lBhOIgEDYnPNJNtsuxNue26AJr3cjx8KUtrBiQL51C6ZkspZLKypwyejZQy8Xmj9Us1yWvfnrwG0K0TVhzUJTfIWbduNhs5jjNE5DiRZ6Mv9')"></div>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-white">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">
+                        Impulsando el Desarrollo Integral y la Gestión Social en Colombia
+                    </h1>
+<p class="font-body-lg text-body-lg mb-10 text-white/90">
+                        Motor de la infraestructura social y la innovación en su territorio, transformando proyectos en bienestar duradero para la comunidad.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-headline-md text-label-lg hover:scale-105 transition-transform flex items-center gap-2" href="#projects">
+                            Ver Proyectos
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md border-2 border-white text-white px-8 py-4 rounded-xl font-headline-md text-label-lg hover:bg-white/20 transition-all" href="#contact">
+                            Registro de Proveedores
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Metrics -->
+<section class="py-24 bg-white" id="impact">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed/30 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">construction</span>
+</div>
+<span class="font-display-lg text-display-lg text-primary mb-2" id="counter-projects">+150</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Proyectos Ejecutados</h2>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-energy-pink/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-energy-pink text-4xl">schedule</span>
+</div>
+<span class="font-display-lg text-display-lg text-energy-pink mb-2">+120</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Meses de Trabajo</h2>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-community-purple/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-community-purple text-4xl">map</span>
+</div>
+<span class="font-display-lg text-display-lg text-community-purple mb-2">+32</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Departamentos Apoyados</h2>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Sectors (Grid with Images) -->
+<section class="py-24 bg-surface-gray" id="sectors">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16 text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Nuestros Sectores de Acción</h2>
+<p class="font-body-lg text-body-lg text-secondary">Estructuramos, gestionamos y ejecutamos proyectos que contribuyen al desarrollo sostenible del país.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Infrastructure Card -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray soft-lift group transition-all duration-700 opacity-100">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuEI24KvySn5Ug-nccP_FOuoIqzs9KVKzY3y7bMRjA2K3h-MoLQLAc9T2HgFDoCU9dCEMhV0LIztoTlf3HOtNvmw1f7sjJIKeDdS4BokYWPgljNoApCXx2nAscFfj-OSSB2OawzAzw7fWsO8oUu319lMcQ3BSwXVGjhhouht9ySLTDhU5EGUJwoW9lBb0pvqVD2qBNC7SyqXAo8SQRPL3eSMFtTyRI9zJdLJgdiW5VvReqdFvqXjaUNNdE">
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">engineering</span>
+<span class="font-label-lg text-label-lg uppercase">Infraestructura</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-background">Vías y Obras Civiles</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Proyectos de infraestructura de transporte, obras civiles de gran escala y concesiones estratégicas.</p>
+<a class="text-primary font-label-lg text-label-lg flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                                VER MÁS <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Sustainability Card -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray soft-lift group transition-all duration-700 opacity-100">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLs5KFuw2WycfrWc_qIle4TgCVmNcLdaV5zNFrCkJWt-Y1Mp3BTHbA3ma0YRV25KwnLhi08m4Mk95uV6rEHOnRrjYxlOqTZBC4StCa3GCp4WgBRzbTeclAb2pw1gOCPSrBP0DXmmeiCDmzxxWdXy7q6z9THpopijg7HNToxHt_XlvTSrH1g0sWVN06d81X3otxFANn89fTprzsMxvI8glh-5pDQPN8hllbOhbzy8IdXf5H1V3vRKwM0FbA">
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4 text-tertiary">
+<span class="material-symbols-outlined">eco</span>
+<span class="font-label-lg text-label-lg uppercase">Sostenibilidad</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-background">Medio Ambiente</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Desarrollo rural, energías alternativas y proyectos enfocados en la preservación del ecosistema.</p>
+<a class="text-tertiary font-label-lg text-label-lg flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                                VER MÁS <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Social Card -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray soft-lift group transition-all duration-700 opacity-100">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvErtlGeHCd7-48E4U0J-eSFQyItq2Vmh05EpticMWuM8LLA69oODi0jxHJVUZ-2KfWri5ofrPhb8cnpRUvKxwqqN2hPq7kKFT6xg2nv0hWu-mC560TJQMZoUWsddG0aLXfI3uctFQAKpJtX8NkWJQIG34WxoK71V5vsH9nEuqPhu_vWplV9gYwXbBfNZ1cCO1g4UOROllHjBcuMo31aI1ZiRWoS-2xSMmcv6PiQJt3sTQkaXSVhVbvO28">
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4 text-community-purple">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-lg text-label-lg uppercase">Sectores Sociales</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-background">Educación y Salud</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Fortalecimiento de la salud, educación, justicia, deporte y cultura para todas las comunidades.</p>
+<a class="text-community-purple font-label-lg text-label-lg flex items-center gap-1 group-hover:gap-2 transition-all" href="#">
+                                VER MÁS <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition (Bento-style layout) -->
+<section class="py-24 bg-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-widest mb-4 block">Nuestro Valor Diferencial</span>
+<h2 class="font-display-lg text-display-lg text-on-background mb-8">¿Por qué elegir a FOMIDES?</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">format_image_left</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Transparencia</h4>
+<p class="font-body-md text-body-md text-secondary">Altos estándares en la estructuración y ejecución de procesos de contratación pública y privada.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-action-blue/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-action-blue">speed</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Eficiencia</h4>
+<p class="font-body-md text-body-md text-secondary">Optimización de recursos y tiempos para generar valor público real y tangible.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-energy-pink/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-energy-pink">lightbulb</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Innovación</h4>
+<p class="font-body-md text-body-md text-secondary">Articulamos esfuerzos entre academia, sector privado y comunidades para soluciones creativas.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 rounded-2xl overflow-hidden h-48 border border-border-gray">
+<div class="w-full h-full bg-cover bg-center" data-alt="A detailed wide shot of professional engineers and social workers collaborating in a bright modern office with architectural plans on the walls. The scene depicts efficient teamwork, with a focused yet warm atmosphere and plenty of natural daylight streaming through large windows. The interior is minimalist with wooden accents, reflecting a mix of corporate professionalism and social focus." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6JogIy9zCZxFqBeSZoFqk3PUi8txtMNXu7v1h_5mWKNX9jtnBtTClBXQZBak-sFPmWOkYozrpb9A0uugC09ifPj3mjAoKba3-UV_mi5LarQT3VKImwjwaj6TjdZQCy9_7Hkm7Q2svGFc0zF8a63Bm7IC73L2o8G4R4xdvNHhoFf46P4moKXCWbCxq3-jkIHHI4vtgj65zP26C7A9zOd0pD4SYHW4D7lBt1cgxAjw-9qHzwZrXdisT')"></div>
+</div>
+<div class="rounded-2xl overflow-hidden h-64 border border-border-gray">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of diverse hands coming together to place the final piece in a complex model of a sustainable city layout. The lighting is soft and artistic, highlighting the concept of community collaboration and innovation. The style is clean and high-end, focusing on detail and textures of architectural modeling materials." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA164ubAVGs32Zxm9WQjPzqxisiMuEVpa21ufZ3EplunFZF0D2JDfGSY8wVSFCW7VYO0AmaFFem3vbQ_pu1mXVrh-Wc8bEahMWW05eXuXZfoWLpox74DWONqROFWmHYx43FQc8BTSazj7RVXWjIwB-5ugJJPPQqag3CpjR4L1MY8aKUNiPkXooaQVK4GloEFPvOVSyGYEkitABghPTsveuN0LpYhj2g5u9sjV72HWQSB3l_J2BQg0Rz')"></div>
+</div>
+<div class="rounded-2xl overflow-hidden h-64 border border-border-gray">
+<div class="w-full h-full bg-cover bg-center" data-alt="A vibrant landscape shot of a newly constructed solar park in a rural Colombian region, showing high-tech solar panels reflecting the clear blue sky. In the foreground, local community members are being trained on the technology. The lighting is bright and optimistic, conveying progress, sustainability, and empowerment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwMwoWP_7MxPE_3i7nNLOcUGhfqHoGGw0e6qM8WpZrnR8KWQd80FT4QRY-PQzPAqJ6VZm83V5oA6iJDrCkfSio2QKON6oSXnt7mb_uAdjwTxZyG52ubS3FhvV4syZRqAKUvHiNuAOlxyKI-Uj3BYnGYaul9-I7wwxePlU_A6uYn3MDApXIE1if5tjaOLpym-d41_DKscW-Wo6X2dQ51vgM7r7KGb0mN6qNyFu8wWmr2E4sF0W-HDXI')"></div>
+</div>
+</div>
+<!-- Abstract decoration -->
+<div class="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+<div class="absolute -z-10 -bottom-10 -left-10 w-64 h-64 bg-energy-pink/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Showcase -->
+<section class="py-24 bg-surface-gray" id="projects">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Proyectos Recientes</h2>
+<p class="font-body-md text-body-md text-secondary">Transformando el territorio nacional con obras de impacto real.</p>
+</div>
+<a class="hidden md:block font-label-lg text-label-lg text-primary border-2 border-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-all" href="#">Ver Todos los Proyectos</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project card 1 -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray shadow-sm hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide shot of a modern, colorful community sports center in a rural area of Colombia. Children are playing on the brightly painted courts under a clear afternoon sky. The architecture is contemporary, with sustainable materials and open-air ventilation. The lighting is warm and joyful, highlighting the project's positive impact on local youth and community well-being." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqYMIztDaeViPkYP9pDCZkQD06WT766_k4uiY-AYzDLeZiklS6C0zabr4i8b1SRZDE-A2RehOlIhz2A_kDbPIfqs488aFDmY7U4cJ4-6fxC6dvU5tM35cvZFzDbWTM1KlLWcCb8qTDMt3CuMlmVLqV1RncnGfhFzQunfSH0wco9qI994qR1XGocg4W6aSzZoYpmVDeYaG2TJN7XeICLxAussURY-ILms9Tv4Crvpf7EwIGj2NSsC6N')"></div>
+</div>
+<div class="p-6">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-label-sm text-label-sm mb-4 inline-block">Sostenibilidad</span>
+<h4 class="font-headline-md text-headline-md mb-2">Energías Limpias en Casanare</h4>
+<p class="font-body-md text-body-md text-secondary mb-6">Implementación de sistemas fotovoltaicos en escuelas rurales para garantizar suministro eléctrico continuo.</p>
+<div class="w-full bg-secondary-container h-2 rounded-full mb-2">
+<div class="bg-tertiary h-full rounded-full w-[85%]"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-secondary">
+<span>Progreso: 85%</span>
+<span>Fase: Ejecución</span>
+</div>
+</div>
+</div>
+<!-- Project card 2 -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray shadow-sm hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="An expansive view of a newly paved rural road winding through lush green tropical hills in Colombia. The road features high-quality asphalt, clear safety markings, and modern drainage systems. A group of local farmers is standing by the side, looking at the road with pride. The lighting is bright and daylight-balanced, emphasizing infrastructure quality and regional connectivity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnijvXUcX6thO3EkpR13TIEFFJoIYmqM1DCRBkHnqLjpuCK4W0GOekWn9AZ5fg2qYTxqlHiBqXGPke-Kg-EZHU_XOYSh3lfwXTG9O58qm6E85i6oxce67el0xgVYBGUHiHzD2Vz1-W4i3GOVKCwAxTQW7-_7ZxYyHFlGTTf3R649LYw3oECOU755xR9buYMGddjLHHFqPyAirKlxVOBbIuOvfoZEVDdIMA0y-8cSHZMhlwQM6KN-g6')"></div>
+</div>
+<div class="p-6">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full font-label-sm text-label-sm mb-4 inline-block">Infraestructura</span>
+<h4 class="font-headline-md text-headline-md mb-2">Red Vial Terciaria - Lote 04</h4>
+<p class="font-body-md text-body-md text-secondary mb-6">Mejoramiento de pavimentación y drenajes en vías de acceso para fortalecer el comercio local agrícola.</p>
+<div class="w-full bg-secondary-container h-2 rounded-full mb-2">
+<div class="bg-primary h-full rounded-full w-[100%]"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-secondary">
+<span>Progreso: 100%</span>
+<span class="">Fase: Finalizado</span>
+</div>
+</div>
+</div>
+<!-- Project card 3 -->
+<div class="bg-white rounded-xl overflow-hidden border border-border-gray shadow-sm hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, modern medical clinic interior in a small Colombian town, showing a new examination room with state-of-the-art medical equipment. A doctor is talking kindly to an elderly patient. The lighting is sterile yet inviting, with soft shadows and a high-key light-mode aesthetic that communicates care, cleanliness, and advanced healthcare access for remote populations." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYsfKV8CWUycJ8tHlIHcmJjfme5WzHBWw35rTNIUfopozz-lYZSpN-zeuHA-C7T6xT3FW2KBAX8K3GW21iUBYMNmgWoDnkEMWi5IU0LO6JPAfVSZwKed9VturqhSgBT2BjOUMfm0byw_ZF0M-zdVsORbBJYUXW1v89t8LOY4poSPGgOM21jU1EphUq9GsAjXaanaL0M-lKKPHR3BhNOlKbYIEuDutnVLYkcTUcUPuBKjc0EIg_nqWA')"></div>
+</div>
+<div class="p-6">
+<span class="px-3 py-1 bg-community-purple/10 text-community-purple rounded-full font-label-sm text-label-sm mb-4 inline-block">Social</span>
+<h4 class="font-headline-md text-headline-md mb-2">Centro de Salud Nivel 1</h4>
+<p class="font-body-md text-body-md text-secondary mb-6">Construcción y dotación de infraestructura hospitalaria básica para comunidades aisladas del litoral.</p>
+<div class="w-full bg-secondary-container h-2 rounded-full mb-2">
+<div class="bg-community-purple h-full rounded-full w-[40%]"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-secondary">
+<span>Progreso: 40%</span>
+<span>Fase: Cimentación</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 bg-white" id="contact">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-surface rounded-3xl overflow-hidden shadow-xl border border-border-gray flex flex-col lg:flex-row">
+<div class="lg:w-5/12 bg-on-background p-12 text-white flex flex-col justify-between">
+<div class="">
+<h2 class="font-display-lg text-display-lg-mobile mb-6">¿Tienes un proyecto pendiente?</h2>
+<p class="font-body-lg text-body-lg text-white/80 mb-8">Nosotros te ayudamos a transformarlo en una realidad. Nuestro equipo de expertos está listo para asesorarte.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">call</span>
+<span>323 498 0204 | 314 334 0858</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<span class="">Carrera 9B No. 21 - 05, Yopal, Casanare</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span>contacto@fomides.org.co</span>
+</div>
+</div>
+</div>
+<div class="lg:w-7/12 p-12 bg-white">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Nombre y Apellidos</label>
+<input class="w-full p-3 rounded-lg border border-border-gray focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Celular</label>
+<input class="w-full p-3 rounded-lg border border-border-gray focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="tel">
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Email</label>
+<input class="w-full p-3 rounded-lg border border-border-gray focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="email">
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Departamento</label>
+<select class="w-full p-3 rounded-lg border border-border-gray focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option>Seleccione un departamento</option>
+<option>Casanare</option>
+<option>Cundinamarca</option>
+<option>Antioquia</option>
+</select>
+</div>
+<div class="space-y-2 col-span-1 md:col-span-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Tipo de Proyecto</label>
+<input class="w-full p-3 rounded-lg border border-border-gray focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Ej: Obra Civil, Social, Ambiental" type="text">
+</div>
+<div class="col-span-1 md:col-span-2 mt-4">
+<button class="w-full md:w-auto bg-primary text-white px-12 py-4 rounded-xl font-label-lg text-label-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2" type="submit">
+                                    ENVIAR
+                                    <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-secondary dark:bg-on-secondary-fixed">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto text-on-secondary">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<span class="text-headline-md font-headline-md text-primary-fixed block mb-2">FOMIDES</span>
+<p class="font-body-md text-secondary-fixed-dim max-w-xs">Fondo Mixto de Contratación dedicado al desarrollo sostenible de Colombia.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex flex-wrap justify-center gap-6 font-body-md">
+<a class="text-secondary-fixed-dim hover:text-white transition-colors" href="#"><br></a>
+<a class="text-secondary-fixed-dim hover:text-white transition-colors" href="#"><br></a>
+<a class="text-secondary-fixed-dim hover:text-white transition-colors" href="#"><br></a>
+<a class="text-secondary-fixed-dim hover:text-white transition-colors" href="#"><br></a>
+</div>
+<div class="text-label-sm font-label-sm text-secondary-fixed-dim opacity-70">
+                    © 2024 FOMIDES - Fondo Mixto de Contratación. All rights reserved. | 2025
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.soft-lift').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
